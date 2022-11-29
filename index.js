@@ -19,12 +19,15 @@ app.get('/api/courses', (req, res) => {
 
 app.post('/api/courses', (req, res) => {
   const course = {
-    id: courses.length +1,
+    id: courses.length + 1,
     name: req.body.name
   };
   courses.push(course);
   res.send(course);
 });
+
+
+
 
 app.get('/api/courses/:id', (req, res) => {
   const course = courses.find(c => c.id === parseInt(req.params.id));
