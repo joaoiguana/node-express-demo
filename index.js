@@ -6,7 +6,12 @@ app.get('/', (req, res) => {
 });
 
 app.get('/api/courses', (req, res) => {
-  res.send([1, 2, 3])
+  res.send([1, 2, 3]);
+});
+
+// Setting a route with ID
+app.get('/api/posts/:year/:month', (req, res) => {
+  res.send(req.query);
 });
 
 // Setting an enviroment variable PORT
